@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <style>
+        :root {
+            --pomo-bgcolor: rgb(0, 128, 255);
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        body {
+            height: 100vh;
+            background-color: var(--pomo-bgcolor);
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pomo_container {
+            background-color: var(--pomo-bgcolor);
+            border: 3px solid lightslategray;
+            border-radius: 5px;
+            width: auto;
+            height: 200px;
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body class="flex">
+    <div class="pomo_container flex" style="flex-direction: column;">
+        <div class="options">
+            <button onclick="switchTime(25)">
+                Pomodoro
+            </button>
+            <button onclick="switchTime(5)">
+                Short Break
+            </button>
+            <button onclick="switchTime(15)">
+                Long Break
+            </button>
+        </div>
+        <div class="count_display">
+            <span class="minutes" id="minutes"></span>
+            :
+            <span class="seconds" id="seconds"></span>
+        </div>
+        <button id="startbutton" onclick="countDown()">
+            Start
+        </button>
+        <button id="pausebutton" onclick="pause()">
+            Pause
+        </button>
+        <button>
+            Reset
+        </button>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>
